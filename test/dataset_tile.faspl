@@ -1,0 +1,20 @@
+dataset main()
+{
+	input file;
+	string dataset_filename;
+	dataset a;
+	dataset b;
+	
+	a="head.RGBfloat.xfdl";
+
+	file = "dataset_list.dat";
+	file >> dataset_filename;
+	while(dataset_filename != "")
+	{
+		stdout << dataset_filename << "\n";
+		b=dataset_filename;
+		a= a["red","green", "blue"] {+} b[void,void,void];
+		file >> dataset_filename;
+	}
+	return a;
+}

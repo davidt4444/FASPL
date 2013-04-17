@@ -1,0 +1,32 @@
+/* 
+attempt.faspl 
+*/
+
+dataset main(void)
+{
+	dataset A;
+	dataset B;
+	dataset C;
+	dataset D;
+	dataset E;
+	dataset F;
+
+	A="head.float.xfdl";
+	B="head.RGBfloat.xfdl";
+	C="head.RGBByte.xfdl";
+
+	D= A[void,"density"] [+] B["red",void];
+	/* This way */
+	E= A[ void, void, "density"]{0:127, 0:127, 0:127} [+] B[void, "green", void]{0:127, 0:127, 0:127} [+] C["red", void, void]{0:127, 0:127, 0:127};
+
+	/* Not This way*/
+	/***************/
+	/* E= A["density", void, void] [+] B[void,void, "green"] [+] C[void,"red", void]; */
+	/***************/
+
+	/* Doesn't show the coordinates */
+	F= D["red", "density"] [+] E[void, void, "green"];
+	/* shows the coordinates */
+	/* F= D["red", "density"] [+] E; */
+	return F;
+}

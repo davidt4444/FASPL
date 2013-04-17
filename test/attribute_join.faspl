@@ -1,0 +1,14 @@
+/* dataset_fun.faspl */
+dataset main()
+{
+	dataset A;
+	dataset B;
+	dataset C;
+
+	A="head.float.xfdl";
+	B="head.RGBfloat.xfdl";
+
+	C= A[void,"density"] [+] B["red",void];
+
+	return C;
+}

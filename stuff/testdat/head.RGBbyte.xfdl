@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FileDescriptor PUBLIC "-//SDB//DTD//EN" "fdl.dtd">
+<FileDescriptor fileName="head.RGBbyte"  fileType="binary" recordSize="4">
+   <Bounds lower= "0"    upper= "127"/>
+   <Bounds lower= "0"    upper= "127"/>
+   <Bounds lower= "0"    upper= "127"/>
+   <Field fieldName="red"   fieldType="byte"/>
+   <Field fieldName="green"   fieldType="byte"/>
+   <Field fieldName="blue"   fieldType="byte"/>
+</FileDescriptor>

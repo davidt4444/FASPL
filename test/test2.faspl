@@ -1,0 +1,16 @@
+/* Example program 2*/
+dataset main(void)
+{
+	dataset A;
+	dataset B;
+	dataset C;
+	dataset D;
+	int sum;
+	
+	sum=9;
+	A="local://test1.xfdl";
+	B="local://test2.xfdl";
+	C="local://test3.xfdl";
+	D= A [+] B [+] C;
+	return D;
+}

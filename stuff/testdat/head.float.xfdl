@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FileDescriptor PUBLIC "-//SDB//DTD//EN" "fdl.dtd">
+<FileDescriptor fileName="head.byte"  fileType="binary" recordSize="4" byteOrder="little">
+   <Bounds lower= "0"    upper= "127"/>
+   <Bounds lower= "0"    upper= "127"/>
+   <Bounds lower= "0"    upper= "127"/>
+   <Field fieldName="density"   fieldType="float"/>
+</FileDescriptor>

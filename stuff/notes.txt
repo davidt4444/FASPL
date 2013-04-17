@@ -1,0 +1,22 @@
+line 574 of xddlreader
+
+
+
+requiring that joins with a compound dataset can only be with other compound datasets
+using ints in the compound dataset statement 
+not allowing null spots in the statement of a compound data statement for dinamic allocation
+i.e. 
+
+dataset A;
+dataset B;
+dataset C;
+int sum;
+sum=10;
+A="";
+B="";
+C = A{0,sum}[kj,lkh,kj] {+} B{0,sum}[kj,lkh,kj]; 
+
+The following wold not be allowed 
+
+C = A{0,sum}[kj,lkh,kj] {+} B; 
+

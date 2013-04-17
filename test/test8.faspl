@@ -1,0 +1,28 @@
+/* Example program #2*/
+
+dataset result(dataset A,dataset B,int sum)
+{
+	if(sum > 0)
+	{
+		sum=sum-1;
+		return result(A[+]B,A{+}B,sum);
+	}
+	else
+	{
+		return A;
+	}
+}
+dataset main(void)
+{
+	dataset A;
+	dataset B;
+	dataset C;
+	int sum;
+	sum=10;
+
+	A="local://test1.xfdl";
+	B="local://test2.xfdl";
+
+	C = result(A,B,sum);
+	return C;
+}

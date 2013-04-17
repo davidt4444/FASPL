@@ -1,0 +1,51 @@
+/* Example program #3*/
+
+dataset hey(dataset y1, dataset y2)
+{
+dataset d3;
+
+return d3;
+}
+
+dataset tree()
+{
+dataset d3;
+return d3;
+}
+int try()
+{
+return 3;
+}
+
+int hello_all(int a, dataset b)
+{
+return 3;
+}
+
+dataset t2(dataset d1, dataset d2)
+{
+int a;
+a = try();
+try();
+hey(d1, d2);
+hello_all(try()+try(), tree()[+]tree());
+tree();
+return d1[+]d2;
+}
+
+dataset main()
+{
+dataset A;
+dataset B;
+dataset C;
+dataset D;
+dataset t;
+dataset t2;
+
+t=tree();
+A=B=C="local://test2.xfdl";
+t=t2(A,B);
+
+return t;
+
+}

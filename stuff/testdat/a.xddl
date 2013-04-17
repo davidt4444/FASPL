@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE DataSourceList PUBLIC '-//SDB//DTD//EN' 'ddl.dtd'>
+<DataSourceList>
+	<DataSource dsName='op2' type='physical' fileName='head.float.xfdl'>
+		<Component dsName='op2'>
+			<Map position="0" fieldName="density"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op3' type='physical' fileName='head.RGBfloat.xfdl'>
+		<Component dsName='op3'>
+			<Map position="0" fieldName="red"/>
+			<Map position="1" fieldName="green"/>
+			<Map position="2" fieldName="blue"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op1' type='joined'>
+		<Component dsName='op2'>
+			<Map position='1' fieldName='density' />
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+		<Component dsName='op3' >
+			<Map position='0' fieldName='red' />
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op5' type='physical' fileName='head.float.xfdl'>
+		<Component dsName='op5'>
+			<Map position="0" fieldName="density"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op7' type='physical' fileName='head.RGBfloat.xfdl'>
+		<Component dsName='op7'>
+			<Map position="0" fieldName="red"/>
+			<Map position="1" fieldName="green"/>
+			<Map position="2" fieldName="blue"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op8' type='physical' fileName='head.RGBByte.xfdl'>
+		<Component dsName='op8'>
+			<Map position="0" fieldName="red"/>
+			<Map position="1" fieldName="green"/>
+			<Map position="2" fieldName="blue"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+	</DataSource>
+	<DataSource dsName='op6' type='joined'>
+		<Component dsName='op7'>
+			<Map position='1' fieldName='green' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+		</Component>
+		<Component dsName='op8' >
+			<Map position='0' fieldName='red' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+		</Component>
+	</DataSource>
+	<DataSource dsName='op4' type='joined'>
+		<Component dsName='op5'>
+			<Map position='2' fieldName='density' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+		</Component>
+		<Component dsName='op6' >
+			<Map position='1' fieldName='green' />
+			<Map position='0' fieldName='red' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+		</Component>
+	</DataSource>
+	<DataSource dsName='op0' type='joined'>
+		<Component dsName='op1'>
+			<Map position='0' fieldName='red' />
+			<Map position='1' fieldName='density' />
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+			<Bounds lower= "0"    upper= "127"/>
+		</Component>
+		<Component dsName='op4' >
+			<Map position='2' fieldName='green' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+			<Bounds lower='0' upper='127' />
+		</Component>
+	</DataSource>
+	<PublicDS dsName='op0' />
+</DataSourceList>

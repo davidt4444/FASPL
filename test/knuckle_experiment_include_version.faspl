@@ -1,0 +1,40 @@
+/* knuckle_experiment_include_version.faspl */
+
+#include "test/string.faspl"
+#include "test/month.faspl"
+
+dataset main()
+{
+	int i;
+	int j;
+	int length;
+	int year;
+	int decimal;
+	string word;
+	string word1;
+	string word2;
+	string word3;
+
+	stdout << "What year would you like to know the length of the months for?\n";
+	stdin >> word;
+	if(!(year = atoi(word)))
+	{
+		stdout << "Error, the year entered was not a number or was equal to zero, which is invalid!\n";
+	}
+	else
+	{
+		if(year>0)
+		{
+			i=1;
+		
+			month(i, year);
+		}
+		else
+		{
+			stdout << "Error, the year entered was not a positive number!\n";
+		}
+	}
+
+	return "";
+
+}

@@ -1,0 +1,3 @@
+flex Lex_FASPL.c
+bison YACC_Grammar_FASPL.c
+gcc -ansi -o faspl preprocessor.c lex.yy.c YACC_Grammar_FASPL.tab.c analyzer.c interpreter.c code_generator.c

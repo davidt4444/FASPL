@@ -1,0 +1,87 @@
+int month(int i, int year)
+{
+	if(i<13)
+	{
+		if(i==1)
+		{
+			stdout << "January";
+		}
+		else if(i==2)
+		{
+			stdout << "February";
+		}
+		else if(i==3)
+		{
+			stdout << "March";
+		}
+		else if(i==4)
+		{
+			stdout << "April";
+		}
+		else if(i==5)
+		{
+			stdout << "May";
+		}
+		else if(i==6)
+		{
+			stdout << "June";
+		}
+		else if(i==7)
+		{
+			stdout << "July";
+		}
+		else if(i==8)
+		{
+			stdout << "August";
+		}
+		else if(i==9)
+		{
+			stdout << "September";
+		}
+		else if(i==10)
+		{
+			stdout << "October";
+		}
+		else if(i==11)
+		{
+			stdout << "November";
+		}
+		else if(i==12)
+		{
+			stdout << "December";
+		}
+	
+		if(i==2)
+		{
+			if(!(year%400))
+			{
+				stdout << "-29\n";
+			}
+			else if(!(year%100))
+			{
+				stdout << "-28\n";
+			}
+			else if(!(year%4))
+			{
+				stdout << "-29\n";
+			}
+			else
+			{
+				stdout << "-28\n";
+			}
+		}
+		else if(((i-1)%7)%2)
+		{
+			stdout << "-30\n";
+		}
+		else
+		{
+			stdout << "-31\n";
+		}
+		return month(i+1, year);
+	}
+	else
+	{
+		return 1;
+	}
+}

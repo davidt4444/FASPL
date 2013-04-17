@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE DataSourceList PUBLIC '-//SDB//DTD//EN' 'ddl.dtd'>
+<DataSourceList>
+	<DataSource dsName='op0' type='physical' fileName=''>
+		<Component dsName='op0'>
+		</Component>
+	</DataSource>
+	<PublicDS dsName='op0' />
+</DataSourceList>

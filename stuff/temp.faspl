@@ -1,0 +1,35 @@
+/* fun with input and output */
+
+dataset main()
+{
+	string holder;
+	string holder1;
+	string holder2;
+	string holder3;
+	output test;
+	output test1;
+	output test2;
+	input test3;
+	input test4;
+	input test5;
+
+	test1 = test2 = stdout;
+	test1 << "Hello World!\n";
+	test2 << "Hello World!\n";
+
+	test = "test_file";
+	test << "Hello World!\n";
+
+	test3 = stdin;
+	test3>>holder>>holder1>>holder2>>holder3;
+	stdout<<holder<<"\n";
+	
+	test5 = test4 = "test/test1.faspl";
+	test4>>holder;
+	stdout<<holder<<"\n";
+	
+	test5>>holder;
+	stdout<<holder<<"\n";
+	
+	return "";
+}  

@@ -1,0 +1,23 @@
+/* dataset_fun.faspl */
+dataset main()
+{
+	dataset A;
+	dataset B;
+	dataset C;
+	dataset D;
+	dataset E;
+	dataset F;
+	dataset G;
+
+	A="head.float.xfdl";
+	B="head.RGBfloat.xfdl";
+	C="head.RGBByte.xfdl";
+
+	D= A[void,"density"] [+] B["red",void];
+
+	E= A[void,"density"] [+] C["red",void];
+
+	G= D[void, void]{0:64,0:64,0:64} {+} E["red","density"]{65:127,65:127,65:127};
+
+	return G;
+}

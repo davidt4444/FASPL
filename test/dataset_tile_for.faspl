@@ -1,0 +1,30 @@
+/* dataset_tile_for.faspl */
+
+#include "test/string.faspl"
+
+dataset main()
+{
+	string dataset_prefix;
+	string dataset_maximum;
+	string dataset_filename;
+	int i;
+	int max;
+	dataset a;
+	dataset b;
+	
+	a="head.RGBfloat.xfdl";
+
+	stdout<<"What is the prefix for the datasets that you have?";
+	stdin >> dataset_prefix;
+	stdout<<"How many datasets do you have?";
+	stdin >> dataset_maximum;
+	max = atoi(dataset_maximum);
+	for(i=0;i<max; i=i+1)
+	{
+		dataset_filename = dataset_prefix+i+".xfdl"; 
+		stdout << dataset_filename << "\n";
+		b=dataset_filename;
+		a= a["red","green", "blue"] {+} b[void,void,void];
+	}
+	return a;
+}
