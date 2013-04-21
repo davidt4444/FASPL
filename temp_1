@@ -1,6 +1,0 @@
-dataset main(){
-Input blog;
-blog="blog.php";
-stdout<<"hello";
-return "";
-}
