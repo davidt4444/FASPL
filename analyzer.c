@@ -1147,6 +1147,8 @@ int subInt(TreeNode * root, int tab)
 	|| currentNode->type == LTE
 	|| currentNode->type == GT
 	|| currentNode->type == GTE
+	|| currentNode->type == AND
+	|| currentNode->type == OR
 	)
 	{
 		if(currentNode->left)
@@ -1247,6 +1249,8 @@ int subDouble(TreeNode * root, int tab)
 	|| currentNode->type == LTE
 	|| currentNode->type == GT
 	|| currentNode->type == GTE
+	|| currentNode->type == AND
+	|| currentNode->type == OR
 	)
 	{
 		if(currentNode->left)
@@ -1774,6 +1778,8 @@ void function_call(TreeNode * root, int tab)
 							|| paramNode->type == LTE
 							|| paramNode->type == GT
 							|| paramNode->type == GTE
+							|| paramNode->type == AND
+							|| paramNode->type == OR
 							)
 							{
 								if(paramNode->left)
@@ -1818,6 +1824,8 @@ void function_call(TreeNode * root, int tab)
 							|| paramNode->type == LTE
 							|| paramNode->type == GT
 							|| paramNode->type == GTE
+							|| paramNode->type == AND
+							|| paramNode->type == OR
 							)
 							{
 								if(paramNode->left)
@@ -2061,6 +2069,12 @@ void traverse(TreeNode * root, int tab)
 				subDouble(currentNode->left, tab);
 				subDouble(currentNode->right, tab);
 			}
+		}
+		else if(currentNode->type == AND
+			|| currentNode->type == OR
+			)
+		{
+			subInt(currentNode, tab);
 		}
 		else 
 		if(currentNode->type == '-'

@@ -1333,6 +1333,56 @@ TreeNode * interpreter_subInt(TreeNode * root, int tab)
 
 		return holderNode;
 	}
+	else if(currentNode->type == AND)
+	{
+		holderNode = newNode();
+
+
+		holderNode->is_double = 0;
+		leftNode = interpreter_subInt(currentNode->left, tab);
+		rightNode = interpreter_subInt(currentNode->right, tab);
+		holderNode->type = NUMBER;
+
+		holderNode->tokenString = (char *) calloc(2, sizeof(char));
+
+		if(leftNode->number && rightNode->number)
+		{
+			strcpy(holderNode->tokenString, "1");
+			holderNode->float_number =holderNode->number = 1;
+		}	
+		else
+		{
+			strcpy(holderNode->tokenString, "0");
+			holderNode->float_number =holderNode->number = 0;
+		}
+
+		return holderNode;
+	}
+	else if(currentNode->type == OR)
+	{
+		holderNode = newNode();
+
+
+		holderNode->is_double = 0;
+		leftNode = interpreter_subInt(currentNode->left, tab);
+		rightNode = interpreter_subInt(currentNode->right, tab);
+		holderNode->type = NUMBER;
+
+		holderNode->tokenString = (char *) calloc(2, sizeof(char));
+
+		if(leftNode->number || rightNode->number)
+		{
+			strcpy(holderNode->tokenString, "1");
+			holderNode->float_number =holderNode->number = 1;
+		}	
+		else
+		{
+			strcpy(holderNode->tokenString, "0");
+			holderNode->float_number =holderNode->number = 0;
+		}
+
+		return holderNode;
+	}
 	else if(currentNode->type == NOT)
 	{
 		holderNode = newNode();
@@ -1938,6 +1988,8 @@ TreeNode * interpreter_function_call(TreeNode * root, int tab)
 							|| paramNode->type == GT
 							|| paramNode->type == GTE
 							|| paramNode->type == NOT
+							|| paramNode->type == AND
+							|| paramNode->type == OR
 							)
 							{
 								holder_list = interpreter_newSymbol(current_list->name, tab+1, TYPE_INT, 0, paramNode->lineno);
@@ -2005,6 +2057,8 @@ TreeNode * interpreter_function_call(TreeNode * root, int tab)
 							|| paramNode->type == GT
 							|| paramNode->type == GTE
 							|| paramNode->type == NOT
+							|| paramNode->type == AND
+							|| paramNode->type == OR
 							)
 							{
 								holder_list = interpreter_newSymbol(current_list->name, tab+1, TYPE_DOUBLE, 0, paramNode->lineno);
@@ -2198,6 +2252,8 @@ TreeNode * interpreter_traverse(TreeNode * root, int tab)
 		|| currentNode->type == LTE
 		|| currentNode->type == GT
 		|| currentNode->type == GTE
+		|| currentNode->type == AND
+		|| currentNode->type == OR
 		)
 		{
 			interpreter_subInt(currentNode, tab);
